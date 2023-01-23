@@ -1,4 +1,3 @@
-    
 <h1 align="center"  style="font-weight:bold;" >
   <br>
   <!-- <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a> -->
@@ -11,172 +10,181 @@
 
 <!-- <h4 align="center">A minimal Markdown Editor desktop app built on top of <a target="_blank">Electron</a>.</h4> -->
 
-
 ![Chat Preview](https://github.com/zainuddin-maker/Maintanance-Calendar/blob/master/App.PNG?raw=true)
-<!-- ![screenshot](https://github.com/zainuddin-maker/Export-Excel-to-Json/blob/master/Convert_excel_to_JSON.mp4?raw=true)
 
-https://github.com/zainuddin-maker/Export-Excel-to-Json/blob/master/Convert_excel_to_JSON.mp4 -->
+<!-- ![screenshot](https://github.com/zainuddin-maker/Export-Excel-to-Json/blob/master/Convert_excel_to_JSON.mp4?raw=true) -->
 
-
-
-This application is used for tracking truck locations in 2D images that have been integrated with the actual map 
-with position input in longitude and latitude.
-
-<!-- ![Chat Preview](https://github.com/zainuddin-maker/Location-Tracking/blob/master/ImginMap.PNG?raw=true) -->
-
+This application is used for mapping the maintenance schedule of the ship against the schedule for the ship to dock at the port.
 
 ## Example Data
-- Data Legend
+
+-   Berthing Data
 
         [
             {
-                text: "In Motion",
-                status: "inmotion",
-                color: "#00828c",
+                from: "2023-01-18T07:00:00.000Z",
+                to: "2023-01-18T08:00:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: false,
+
             },
             {
-                text: "Idle",
-                status: "idle",
-                color: "#fed932",
+                from: "2023-01-18T08:00:00.000Z",
+                to: "2023-01-18T09:15:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: true,
             },
             {
-                text: "Queeing",
-                status: "1ueeing",
-                color: "#fd6a03",
+                from: "2023-01-18T09:15:00.000Z",
+                to: "2023-01-18T09:45:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: false,
             },
             {
-                text: "Parked",
-                status: "parked",
-                color: "#e1383f",
+                from: "2023-01-18T09:45:00.000Z",
+                to: "2023-01-18T11:15:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: true,
+            },
+            {
+                from: "2023-01-18T11:15:00.000Z",
+                to: "2023-01-18T14:18:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: false,
+            },
+            {
+                from: "2023-01-18T14:18:00.000Z",
+                to: "2023-01-18T17:18:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: true,
+            },
+
+            {
+                from: "2023-01-20T13:00:00.000Z",
+                to: "2023-01-21T09:00:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat",
+                id: 110,
+                effective: true,
+            },
+
+            {
+                from: "2023-01-22T01:00:00.000Z",
+                to: "2023-01-23T08:00:00.000Z",
+                header: "STS 03",
+                textbody: " - Tanto Sehat Tanto Sehat Tanto Sehat Tanto Sehat",
+                id: 111,
+                effective: true,
             },
         ]
 
-- Data Location 
+-   Maintanance Data
 
         [
             {
-                status: "idle",
-                position: "-6.10228,106.88023",
-                id: 1,
-                number: "05",
+                from: new Date("Jan 18 2023 15:59:59"),
+                to: new Date("Jan 18 2023 17:59:59"),
+                id: "109,110,111,112",
+                idmaintanance: 3,
+                status: "finished",
+                imgstatus: "./icon.png",
+                text: "STS02, STS PM BRAKE",
             },
             {
-                status: "inmotion",
-                position: "-6.10418,106.88023",
-                id: 7,
-                number: "07",
+                from: new Date("Jan 22 2023 14:59:59"),
+                to: new Date("Jan 22 2023 15:59:59"),
+                id: "111,112",
+                idmaintanance: 3,
+                status: "waiting",
+                imgstatus: "./icon.png",
+                text: "STS02, STS PM BRAKE",
             },
             {
-                status: "1ueeing",
-                position: "-6.10218,106.88433",
-                id: 8,
-                number: "08",
+                from: new Date("Jan 21 2023 8:59:59"),
+                to: new Date("Jan 21 2023 12:39:59"),
+                id: "109,110,111,112",
+                idmaintanance: 4,
+                status: "requested",
+                imgstatus: "",
+                text: "STS02,STS PREADER",
             },
             {
-                status: "parked",
-                position: "-6.10228,106.88243",
-                id: 7,
-                number: "09",
+                from: new Date("Jan 23 2023 5:59:59"),
+                to: new Date("Jan 23 2023 10:39:59"),
+                id: "109,110,111,112",
+                idmaintanance: 4,
+                status: "rejected",
+                imgstatus: "./icon2.png",
+                text: "STS02,STS PREADER",
             },
+        ]
 
+-   Id and Position
+
+        [
+            {
+                id: 109,
+                position: 1,
+            },
+            {
+                id: 110,
+                position: 2,
+            },
+            {
+                id: 111,
+                position: 3,
+            },
+            {
+                id: 112,
+                position: 4,
+            },
+            {
+                id: 113,
+                position: 5,
+            },
         ];
 
-- Data Location Realtime
+-  List Legend
 
         [
             {
-                position: "-6.10579,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
+                text: "Waiting  for Approval",
+                color: "#ffda32",
+                status: "waiting",
             },
             {
-                position: "-6.10559,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
+                text: "Requested for schedule change",
+                color: "#fd6a03",
+                status: "requested",
             },
             {
-                position: "-6.10539,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
+                text: "Planned",
+                color: "#bad3f0",
+                status: "planned",
             },
             {
-                position: "-6.10519,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
+                text: "Rejected",
+                color: "#ec3a41",
+                status: "rejected",
             },
             {
-                position: "-6.10499,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
+                text: "Finished",
+                color: "#3ae96e",
+                status: "finished",
             },
-            {
-                position: "-6.10479,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10459,106.88223",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10459,106.88203",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10459,106.88183",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10459,106.88163",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-
-            {
-                position: "-6.104585,106.88143",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10458,106.88123",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10438,106.88123",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10418,106.88123",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-            {
-                position: "-6.10388,106.88123",
-                status: "parked",
-                id: 1,
-                number: "08",
-            },
-        ]
-
+        ];
 
 ## Usage example
 
@@ -185,40 +193,32 @@ with position input in longitude and latitude.
 <td>
 
 
+There are 2 data bars in the form of a timeline, namely berthing data and maintenance data.
 
+For berthing data, there are 2 types, namely effective and ineffective which are distinguished by color, the effective one is light blue, and the ineffective one is dark gray, and this data berhing can be hovered over and displays the berthing data.
 
+![Chat Preview](https://github.com/zainuddin-maker/Maintanance-Calendar/blob/master/hovervassel.PNG?raw=true)
 
+we can set the location of the ship based on id and position data
 
-This application has 2 modes, realtime mode and history mode.
+For maintenance data, it is used to display the maintenance schedule and also its status, status based on the input legend provided, and its color based on the status matched to the legend. and on the maintenance label you can input an image. in the maintenance section you can click and output the maintenance data. and also in this section you can hover and display data maintenance information
 
-History mode displays the location of the input data location in the map , and also adjusts the status color according to the list legend . when the icon of each location is clicked it will output data from that point. and will automatically zoom towards the icon
+![Chat Preview](https://github.com/zainuddin-maker/Maintanance-Calendar/blob/master/hovermain.PNG?raw=true)
 
-![Chat Preview](https://github.com/zainuddin-maker/Location-Tracking/blob/master/zoomintruck.PNG?raw=true)
+And also if the data is on today then the calendar header will change color to gray, and there is an hour pointer for the current situation.
 
-Realtime mode is used to display the location in a relatime value from realtime location data which is always increasing.
- 
- ![Chat Preview](https://github.com/zainuddin-maker/Location-Tracking/blob/master/AppRealtime.PNG?raw=true)
-
- Each point when clicked it will zoom and output data from that point.
-
- ![Chat Preview](https://github.com/zainuddin-maker/Location-Tracking/blob/master/zoomrealtimetruck.PNG?raw=true)
-
-Each mode can do manual zoom via the buttons from zoom in zoom out at the top right end
-
- ![Chat Preview](https://github.com/zainuddin-maker/Location-Tracking/blob/master/zoombutton.PNG?raw=true)
-
+![Chat Preview](https://github.com/zainuddin-maker/Maintanance-Calendar/blob/master/Today.PNG?raw=true)
 
 
 </td>
 </tr>
 </table>
 
-
 <!-- ## BIND DATA
 
 1.  JSONDocinformation , input - JSON - Data for Doc Information in header
 
-   
+
         {
             name: (STRING),
             value: (STRING),
@@ -228,7 +228,7 @@ Each mode can do manual zoom via the buttons from zoom in zoom out at the top ri
 
 2.  JSONHeaderinformation, input - JSON - Data for Headerinformation in header.
 
-       
+
         {
             name: (STRING),
             value: (STRING),
@@ -236,13 +236,13 @@ Each mode can do manual zoom via the buttons from zoom in zoom out at the top ri
 
 3.  ConfigurationWidth, input - INFOTABLE - Configuration widht each of column in excel.
 
-       
+
         {
             width: (STRING),
         }
 
 
-4.  BooleanDisplayButton , input -BOOLEAN - Input for button seen or not 
+4.  BooleanDisplayButton , input -BOOLEAN - Input for button seen or not
 5.  Filename , input - STRING - name of file after exported
 6.  Headername , input - STRING - the title in template document.
 4.  LabourProductivity , input - INFOTABLE - Data for Labour Productuvity
@@ -285,26 +285,8 @@ Each mode can do manual zoom via the buttons from zoom in zoom out at the top ri
 
  -->
 
+## Built with
 
-
-
-
-## Built with 
-
-- [D3.js](https://d3js.org/) - D3.js is a JavaScript library for manipulating documents based on data.
-- [html](https://www.w3schools.com/html/) - HTML is the standard markup language for Web pages.
-- [css](https://www.w3schools.com/css/) - CSS is the language we use to style an HTML document
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-   [D3.js](https://d3js.org/) - D3.js is a JavaScript library for manipulating documents based on data.
+-   [html](https://www.w3schools.com/html/) - HTML is the standard markup language for Web pages.
+-   [css](https://www.w3schools.com/css/) - CSS is the language we use to style an HTML document
